@@ -1,4 +1,9 @@
-*.suo
+# ReSharper files
+_ReSharper.BlueBlinky.Module/
 
+# Build output
 bin/
 obj/
+
+# Visual Studio user files
+*.suo
