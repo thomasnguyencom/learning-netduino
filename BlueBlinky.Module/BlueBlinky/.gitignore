@@ -1,0 +1,13 @@
+# ReSharper files
+_ReSharper.*/
+
+# Build output
+bin/
+obj/
+
+# Visual Studio user files
+*.suo
+*.user
+
+# netduino generated
+OnBoardFlash.dat
