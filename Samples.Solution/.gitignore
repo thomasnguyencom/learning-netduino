@@ -1,0 +1,5 @@
+# ReSharper files
+_ReSharper.Samples.Solution/
+
+# Visual Studio user files
+*.suo
