@@ -1,5 +1,5 @@
 # ReSharper files
-_ReSharper.BlueBlinky.Module/
+_ReSharper.*/
 
 # Build output
 bin/
@@ -7,3 +7,7 @@ obj/
 
 # Visual Studio user files
 *.suo
+*.user
+
+# netduino generated
+OnBoardFlash.dat

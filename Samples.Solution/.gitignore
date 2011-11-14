@@ -1,5 +1,10 @@
 # ReSharper files
-_ReSharper.Samples.Solution/
+_ReSharper.*/
+
+# Build output
+bin/
+obj/
 
 # Visual Studio user files
 *.suo
+*.user
