@@ -50,6 +50,7 @@ namespace ShieldStudio.Views.ShieldStudio
             // MAX6953 Table 22
             _device.Execute(new I2CDevice.I2CTransaction[] { I2CDevice.CreateWriteTransaction(new byte[] { 0x07, 0x00 }) }, TIMEOUT);
         }
+
         public void WriteCharacter(char character, Digits digit)
         {
             byte actualDigit;
@@ -82,6 +83,17 @@ namespace ShieldStudio.Views.ShieldStudio
             WriteCharacter(displayPanel.FourthCharacter, Digits.Fourth);
 
             Thread.Sleep(pause);
+        }
+
+        public void WritePhrase(int pause, DisplayPanel[] displayPanels)
+        {
+            while (true)
+            {
+                foreach (var displayPanel in displayPanels)
+                {
+                    WriteWord(displayPanel, pause);
+                }
+            }
         }
 
         private void WriteChar(I2CDevice device, char value, byte disp)
