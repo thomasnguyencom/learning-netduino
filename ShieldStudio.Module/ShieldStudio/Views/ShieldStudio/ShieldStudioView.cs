@@ -74,12 +74,12 @@ namespace ShieldStudio.Views.ShieldStudio
             WriteChar(_device, character, actualDigit);
         }
 
-        public void WriteWord(char char1, char char2, char char3, char char4, int pause)
+        public void WriteWord(DisplayPanel displayPanel, int pause)
         {
-            WriteCharacter(char1, Digits.First);
-            WriteCharacter(char2, Digits.Second);
-            WriteCharacter(char3, Digits.Third);
-            WriteCharacter(char4, Digits.Fourth);
+            WriteCharacter(displayPanel.FirstCharacter, Digits.First);
+            WriteCharacter(displayPanel.SecondCharacter, Digits.Second);
+            WriteCharacter(displayPanel.ThirdCharacter, Digits.Third);
+            WriteCharacter(displayPanel.FourthCharacter, Digits.Fourth);
 
             Thread.Sleep(pause);
         }
