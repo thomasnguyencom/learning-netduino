@@ -1,4 +1,5 @@
-﻿using ShieldStudio.Views.ShieldStudio;
+﻿using ShieldStudio.Services.ShieldStudioPresenterServices;
+using ShieldStudio.Views.ShieldStudio;
 
 namespace ShieldStudioShell
 {
@@ -7,12 +8,7 @@ namespace ShieldStudioShell
         public static void Main()
         {
             var view = new ShieldStudioView();
-            view.WritePhrase(new DisplayPanel[] {
-                    new DisplayPanel('S', 'h', 'i', 'e'),
-                    new DisplayPanel('l', 'd', 'S', 't'),
-                    new DisplayPanel('u', 'd', 'i', 'o'),
-                    new DisplayPanel('.', 'c', 'o', 'm')
-                });
+            view.WritePhrase(new ShieldStudioPresenterServices().GetSampleMessage());
         }
 
     }
