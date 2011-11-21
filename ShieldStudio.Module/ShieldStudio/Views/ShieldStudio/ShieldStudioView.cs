@@ -2,9 +2,9 @@
 using System.Threading;
 using Microsoft.SPOT.Hardware;
 
-namespace ShieldStudio.Services.ShieldStudioPresenterServices
+namespace ShieldStudio.Views.ShieldStudio
 {
-    public class ShieldStudioPresenterServices : IShieldStudioPresenterServices
+    public class ShieldStudioView
     {
         private I2CDevice _device;
 
@@ -15,7 +15,15 @@ namespace ShieldStudio.Services.ShieldStudioPresenterServices
 
         const int TIMEOUT = 100;
 
-        public ShieldStudioPresenterServices()
+        public enum Digits
+        {
+            First,
+            Second,
+            Third,
+            Fourth
+        }
+
+        public ShieldStudioView()
         {
             _device = new I2CDevice(new I2CDevice.Configuration(0x50, 400));
 
@@ -42,21 +50,21 @@ namespace ShieldStudio.Services.ShieldStudioPresenterServices
             // MAX6953 Table 22
             _device.Execute(new I2CDevice.I2CTransaction[] { I2CDevice.CreateWriteTransaction(new byte[] { 0x07, 0x00 }) }, TIMEOUT);
         }
-        public void WriteCharacter(char character, ShieldStudioPresenterBase.Digits digit)
+        public void WriteCharacter(char character, Digits digit)
         {
             byte actualDigit;
             switch (digit)
             {
-                case ShieldStudioPresenterBase.Digits.First:
+                case Digits.First:
                     actualDigit = DIGIT_1;
                     break;
-                case ShieldStudioPresenterBase.Digits.Second:
+                case Digits.Second:
                     actualDigit = DIGIT_2;
                     break;
-                case ShieldStudioPresenterBase.Digits.Third:
+                case Digits.Third:
                     actualDigit = DIGIT_3;
                     break;
-                case ShieldStudioPresenterBase.Digits.Fourth:
+                case Digits.Fourth:
                     actualDigit = DIGIT_4;
                     break;
                 default:
@@ -68,10 +76,10 @@ namespace ShieldStudio.Services.ShieldStudioPresenterServices
 
         public void WriteWord(char char1, char char2, char char3, char char4, int pause)
         {
-            WriteCharacter(char1, ShieldStudioPresenterBase.Digits.First);
-            WriteCharacter(char2, ShieldStudioPresenterBase.Digits.Second);
-            WriteCharacter(char3, ShieldStudioPresenterBase.Digits.Third);
-            WriteCharacter(char4, ShieldStudioPresenterBase.Digits.Fourth);
+            WriteCharacter(char1, Digits.First);
+            WriteCharacter(char2, Digits.Second);
+            WriteCharacter(char3, Digits.Third);
+            WriteCharacter(char4, Digits.Fourth);
 
             Thread.Sleep(pause);
         }

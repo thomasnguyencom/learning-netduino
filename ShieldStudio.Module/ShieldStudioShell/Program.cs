@@ -1,4 +1,4 @@
-﻿using ShieldStudio.Services.ShieldStudioPresenterServices;
+﻿using ShieldStudio.Views.ShieldStudio;
 
 namespace ShieldStudioShell
 {
@@ -6,14 +6,14 @@ namespace ShieldStudioShell
     {
         public static void Main()
         {
-            IShieldStudioPresenterServices service = new ShieldStudioPresenterServices();
+            var view = new ShieldStudioView();
 
             while (true)
             {
-                service.WriteWord('S', 'h', 'i', 'e', 400);
-                service.WriteWord('l', 'd', 'S', 't', 400);
-                service.WriteWord('u', 'd', 'i', 'o', 400);
-                service.WriteWord('.', 'c', 'o', 'm', 400);
+                view.WriteWord('S', 'h', 'i', 'e', 400);
+                view.WriteWord('l', 'd', 'S', 't', 400);
+                view.WriteWord('u', 'd', 'i', 'o', 400);
+                view.WriteWord('.', 'c', 'o', 'm', 400);
             }
         }
 
