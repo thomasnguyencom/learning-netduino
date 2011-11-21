@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <AssemblyName>ShieldStudio</AssemblyName>
-    <OutputType>Library</OutputType>
-    <RootNamespace>ShieldStudio</RootNamespace>
+    <AssemblyName>ShieldStudioShell</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ShieldStudioShell</RootNamespace>
     <ProjectTypeGuids>{b69e3092-b931-443c-abe7-7e7b65f2a37f};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{22B7662A-70CE-4632-B847-2D77F4D3CF0D}</ProjectGuid>
+    <ProjectGuid>{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}</ProjectGuid>
     <TargetFrameworkVersion>v4.1</TargetFrameworkVersion>
     <NetMfTargetsBaseDir Condition="'$(NetMfTargetsBaseDir)'==''">$(MSBuildExtensionsPath32)\Microsoft\.NET Micro Framework\</NetMfTargetsBaseDir>
   </PropertyGroup>
@@ -28,22 +28,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ShieldStudioPresenterServices\IShieldStudioPresenterServices.cs" />
-    <Compile Include="Services\ShieldStudioPresenterServices\ShieldStudioPresenterBase.cs" />
-    <Compile Include="Services\ShieldStudioPresenterServices\ShieldStudioPresenterServices.cs" />
+    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.SPOT.Hardware" />
     <Reference Include="Microsoft.SPOT.Native">
     </Reference>
-    <Reference Include="Microsoft.SPOT.Net" />
-    <Reference Include="SecretLabs.NETMF.Hardware, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
-    <Reference Include="SecretLabs.NETMF.Hardware.NetduinoPlus, Version=4.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShieldStudio\ShieldStudio.csproj">
+      <Project>{22B7662A-70CE-4632-B847-2D77F4D3CF0D}</Project>
+      <Name>ShieldStudio</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>

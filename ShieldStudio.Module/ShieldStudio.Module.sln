@@ -1,7 +1,29 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldStudio", "ShieldStudio\ShieldStudio.csproj", "{22B7662A-70CE-4632-B847-2D77F4D3CF0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldStudioShell", "ShieldStudioShell\ShieldStudioShell.csproj", "{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22B7662A-70CE-4632-B847-2D77F4D3CF0D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
