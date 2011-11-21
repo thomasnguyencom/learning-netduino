@@ -15,6 +15,8 @@ namespace ShieldStudio.Views.ShieldStudio
 
         const int TIMEOUT = 100;
 
+        private const int DEFAULT_PAUSE = 400;
+
         public enum Digits
         {
             First,
@@ -94,6 +96,11 @@ namespace ShieldStudio.Views.ShieldStudio
                     WriteWord(displayPanel, pause);
                 }
             }
+        }
+
+        public void WritePhrase(DisplayPanel[] displayPanels)
+        {
+            WritePhrase(DEFAULT_PAUSE, displayPanels);
         }
 
         private void WriteChar(I2CDevice device, char value, byte disp)
