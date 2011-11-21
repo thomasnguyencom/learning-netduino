@@ -13,7 +13,7 @@ namespace Blinky
         public static void Main()
         {
             // write your code here
-            OutputPort led = new OutputPort(Pins.ONBOARD_LED, false);
+            var led = new OutputPort(Pins.ONBOARD_LED, false);
 
             while (true)
             {
