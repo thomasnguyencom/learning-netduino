@@ -8,10 +8,10 @@ namespace ShieldStudio.Views.ShieldStudio
     {
         private I2CDevice _device;
 
-        byte DIGIT_4 = 0x23;
-        byte DIGIT_3 = 0x22;
-        byte DIGIT_2 = 0x21;
-        byte DIGIT_1 = 0x20;
+        byte DIGIT_1 = 0x23;
+        byte DIGIT_2 = 0x22;
+        byte DIGIT_3 = 0x21;
+        byte DIGIT_4 = 0x20;
 
         const int TIMEOUT = 100;
 
@@ -89,18 +89,35 @@ namespace ShieldStudio.Views.ShieldStudio
 
         public void WritePhrase(int pause, DisplayPanel[] displayPanels)
         {
-            while (true)
+            foreach (var displayPanel in displayPanels)
             {
-                foreach (var displayPanel in displayPanels)
-                {
-                    WriteWord(displayPanel, pause);
-                }
+                WriteWord(displayPanel, pause);
             }
         }
 
         public void WritePhrase(DisplayPanel[] displayPanels)
         {
-            WritePhrase(DEFAULT_PAUSE, displayPanels);
+            WritePhrase(displayPanels, false);
+        }
+
+        public void WritePhrase(DisplayPanel[] displayPanels, bool isForever)
+        {
+            if(isForever)
+            {
+                while(true)
+                {
+                    WritePhrase(DEFAULT_PAUSE, displayPanels);
+                }
+            }
+            else
+            {
+                WritePhrase(DEFAULT_PAUSE, displayPanels);
+            }
+        }
+
+        public void Clear()
+        {
+            WritePhrase(new DisplayPanel[] { new DisplayPanel(' ', ' ', ' ', ' ')});
         }
 
         private void WriteChar(I2CDevice device, char value, byte disp)
