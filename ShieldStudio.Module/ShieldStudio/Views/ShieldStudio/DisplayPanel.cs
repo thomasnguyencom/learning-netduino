@@ -14,5 +14,10 @@
             ThirdCharacter = char3;
             FourthCharacter = char4;
         }
+
+        public static DisplayPanel Empty()
+        {
+            return new DisplayPanel(' ', ' ', ' ', ' ');
+        }
     }
 }

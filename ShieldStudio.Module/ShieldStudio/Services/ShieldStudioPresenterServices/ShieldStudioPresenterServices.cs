@@ -28,71 +28,68 @@ namespace ShieldStudio.Services.ShieldStudioPresenterServices
                 {
                     displayPanel = new DisplayPanel[length/4 + 1];
                 }
-
+                
                 var pointer = 0;
 
                 if (displayPanel.Length == 1)
                 {
-
-                    if (length%4 == 1)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], ' ', ' ', ' ');
-                    }
-                    else if (length%4 == 2)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 ' ',
-                                                                                 ' ');
-                    }
-                    else if (length%4 == 3)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 message[pointer++], ' ');
-                    }
-                    else
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 message[pointer++],
-                                                                                 message[pointer++]);
-                    }
+                    displayPanel[displayPanel.Length - 1] = asdf(message, pointer, length);
                 }
                 else
                 {
                     for (var i = 0; i < displayPanel.Length - 1; i++)
                     {
-                        displayPanel[i] = new DisplayPanel(message[pointer++], message[pointer++], message[pointer++],
+                        displayPanel[i] = new DisplayPanel(message[pointer++],
+                                                           message[pointer++], 
+                                                           message[pointer++],
                                                            message[pointer++]);
                     }
 
-                    if (length%4 == 1)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], ' ', ' ', ' ');
-                    }
-                    else if (length%4 == 2)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 ' ',
-                                                                                 ' ');
-                    }
-                    else if (length%4 == 3)
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 message[pointer++], ' ');
-                    }
-                    else
-                    {
-                        displayPanel[displayPanel.Length - 1] = new DisplayPanel(message[pointer++], message[pointer++],
-                                                                                 message[pointer++],
-                                                                                 message[pointer++]);
-                    }
+                    displayPanel[displayPanel.Length - 1] = asdf(message, pointer, length);
                 }
             }
             else
             {
-                displayPanel = new DisplayPanel[] {new DisplayPanel(' ', ' ', ' ', ' ')};
+                displayPanel = new DisplayPanel[] { DisplayPanel.Empty() };
             }
 
             return displayPanel;
+        }
+
+        private DisplayPanel asdf(string message, int pointer, int length)
+        {
+            DisplayPanel panel;
+
+            if (length % 4 == 1)
+            {
+                panel = new DisplayPanel(message[pointer++],
+                                         ' ',
+                                         ' ',
+                                         ' ');
+            }
+            else if (length % 4 == 2)
+            {
+                panel = new DisplayPanel(message[pointer++],
+                                         message[pointer++],
+                                         ' ',
+                                         ' ');
+            }
+            else if (length%4 == 3)
+            {
+                panel = new DisplayPanel(message[pointer++],
+                                         message[pointer++],
+                                         message[pointer++],
+                                         ' ');
+            }
+            else
+            {
+                panel = new DisplayPanel(message[pointer++],
+                                         message[pointer++],
+                                         message[pointer++],
+                                         message[pointer++]);
+            }
+
+            return panel;
         }
     }
 }
