@@ -4,14 +4,66 @@ namespace ShieldStudio.Services.ShieldStudioPresenterServices
 {
     public class ShieldStudioPresenterServices : IShieldStudioPresenterServices
     {
-        public DisplayPanel[] GetSampleMessage()
+        public DisplayPanel[] ConvertToScrollingDisplayPanel(string message)
         {
-            return new DisplayPanel[] {
-                    new DisplayPanel('1', '2', '3', '4'),
-                    new DisplayPanel('2', '3', '4', '1'),
-                    new DisplayPanel('3', '4', '1', '2'),
-                    new DisplayPanel('4', '1', '2', '3')
-                };
+            DisplayPanel[] displayPanel;
+            if (message.Length >= 4)
+            {
+                displayPanel = new DisplayPanel[message.Length + 2];
+
+                var position = 0;
+                displayPanel[position++] = new DisplayPanel(' ', ' ', ' ', message[0]);
+                displayPanel[position++] = new DisplayPanel(' ', ' ', message[0], message[1]);
+                displayPanel[position++] = new DisplayPanel(' ', message[0], message[1], message[2]);
+
+                for (int i = 0; i < message.Length - 4; i++)
+                {
+                    displayPanel[position++] = new DisplayPanel(message[i], message[i + 1], message[i + 2], message[i + 3]);
+                }
+
+                displayPanel[position++] = new DisplayPanel(message[message.Length - 3], message[message.Length - 2], message[message.Length - 1], ' ');
+                displayPanel[position++] = new DisplayPanel(message[message.Length - 2], message[message.Length - 1], ' ', ' ');
+                displayPanel[position++] = new DisplayPanel(message[message.Length - 1], ' ', ' ', ' ');
+            }
+            else if (message.Length == 3)
+            {
+                displayPanel = new DisplayPanel[message.Length + 3];
+
+                var position = 0;
+                displayPanel[position++] = new DisplayPanel(' ', ' ', ' ', message[0]);
+                displayPanel[position++] = new DisplayPanel(' ', ' ', message[0], message[1]);
+                displayPanel[position++] = new DisplayPanel(' ', message[0], message[1], message[2]);
+                displayPanel[position++] = new DisplayPanel(message[0], message[1], message[2], ' ');
+                displayPanel[position++] = new DisplayPanel(message[1], message[2], ' ', ' ');
+                displayPanel[position++] = new DisplayPanel(message[2], ' ', ' ', ' ');
+            }
+            else if (message.Length == 2)
+            {
+                displayPanel = new DisplayPanel[message.Length + 3];
+
+                var position = 0;
+                displayPanel[position++] = new DisplayPanel(' ', ' ', ' ', message[0]);
+                displayPanel[position++] = new DisplayPanel(' ', ' ', message[0], message[1]);
+                displayPanel[position++] = new DisplayPanel(' ', message[0], message[1], ' ');
+                displayPanel[position++] = new DisplayPanel(message[0], message[1], ' ', ' ');
+                displayPanel[position++] = new DisplayPanel(message[1], ' ', ' ', ' ');
+            }
+            else if (message.Length == 1)
+            {
+                displayPanel = new DisplayPanel[message.Length + 3];
+
+                var position = 0;
+                displayPanel[position++] = new DisplayPanel(' ', ' ', ' ', message[0]);
+                displayPanel[position++] = new DisplayPanel(' ', ' ', message[0], ' ');
+                displayPanel[position++] = new DisplayPanel(' ', message[0], ' ', ' ');
+                displayPanel[position++] = new DisplayPanel(message[0], ' ', ' ', ' ');
+            }
+            else
+            {
+                displayPanel = new DisplayPanel[0];
+            }
+
+            return displayPanel;
         }
 
         public DisplayPanel[] ConvertToDisplayPanel(string message)
