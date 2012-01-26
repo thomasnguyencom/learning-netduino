@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldStudio", "ShieldStudi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldStudioShell", "ShieldStudioShell\ShieldStudioShell.csproj", "{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShieldStudioShellTests", "ShieldStudioShellTests\ShieldStudioShellTests.csproj", "{2554509A-7993-4967-879A-8E7B0AD496B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,12 @@ Global
 		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6CA979DA-52A1-457D-A03E-A9CA0D9FE4AA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2554509A-7993-4967-879A-8E7B0AD496B7}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
