@@ -1,9 +1,9 @@
 # learning-netduino
-Playing around with [netduino](https://www.netduino.com/) to learn Arduino. It was on sale at Amazon (November 23, 2016), why not.
+Curious about the [netduino](https://www.netduino.com/) (versus Arduino). August 21, 2011
 
 # Hardware Details
-* [Elegoo UNO Project Super Starter Kit](https://www.amazon.com/gp/product/B01D8KOZF4/) - **$31.99**
-* [Elegoo 37-in-1 Sensor Module Kit](https://www.amazon.com/gp/product/B009OVGKTQ/) - **$26.99**
+* [Netduino Plus 1](https://www.amazon.com/gp/product/B004FRZ4E6/) - **$59.95**
+* [ShieldStudio](http://shieldstudio.com/) - **~$40** (discontinued)
 
 # Software Details
 Please install in the following order:
@@ -11,5 +11,3 @@ Please install in the following order:
   2	[.NET Micro Framework SDK v4.2](http://static.netduino.com/downloads/MicroFrameworkSDK_NETMF42_QFE2.MSI)
   3	[Netduino SDK v4.2.2.0 (32-bit)](http://static.netduino.com/downloads/netduinosdk_32bit_NETMF42.exe) or [Netduino SDK v4.2.2.0 (64-bit)](http://static.netduino.com/downloads/netduinosdk_64bit_NETMF42.exe)
 
-# Hardware Inventory
-Marking what I have actually playred around with
